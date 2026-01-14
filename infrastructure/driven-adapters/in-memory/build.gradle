@@ -1,0 +1,6 @@
+dependencies {
+    implementation project(':model')
+    implementation 'org.springframework:spring-context'
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testImplementation "io.projectreactor:reactor-test"
+}
