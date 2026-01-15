@@ -1,0 +1,1301 @@
+.
+├── README.md
+├── applications
+│   └── app-service
+│       ├── build
+│       │   ├── classes
+│       │   │   └── java
+│       │   │       ├── main
+│       │   │       │   └── co
+│       │   │       │       └── com
+│       │   │       │           └── bancolombia
+│       │   │       │               └── products
+│       │   │       │                   ├── MainApplication.class
+│       │   │       │                   └── config
+│       │   │       │                       ├── AdapterConfig.class
+│       │   │       │                       └── UseCasesConfig.class
+│       │   │       └── test
+│       │   │           └── co
+│       │   │               └── com
+│       │   │                   └── bancolombia
+│       │   │                       └── products
+│       │   │                           ├── AddProductsIntegrationTest.class
+│       │   │                           ├── GetProductsIntegrationTest.class
+│       │   │                           └── config
+│       │   │                               ├── UseCasesConfigTest$TestConfig.class
+│       │   │                               └── UseCasesConfigTest.class
+│       │   ├── generated
+│       │   │   └── sources
+│       │   │       ├── annotationProcessor
+│       │   │       │   └── java
+│       │   │       │       ├── main
+│       │   │       │       └── test
+│       │   │       └── headers
+│       │   │           └── java
+│       │   │               ├── main
+│       │   │               └── test
+│       │   ├── jacoco
+│       │   │   └── test.exec
+│       │   ├── libs
+│       │   │   └── products-api.jar
+│       │   ├── pitClasspath
+│       │   ├── pitHistory.txt
+│       │   ├── reports
+│       │   │   ├── jacoco.xml
+│       │   │   ├── jacocoHtml
+│       │   │   │   ├── co.com.bancolombia.products
+│       │   │   │   │   ├── MainApplication.html
+│       │   │   │   │   ├── MainApplication.java.html
+│       │   │   │   │   ├── index.html
+│       │   │   │   │   └── index.source.html
+│       │   │   │   ├── co.com.bancolombia.products.config
+│       │   │   │   │   ├── AdapterConfig.html
+│       │   │   │   │   ├── AdapterConfig.java.html
+│       │   │   │   │   ├── UseCasesConfig.html
+│       │   │   │   │   ├── UseCasesConfig.java.html
+│       │   │   │   │   ├── index.html
+│       │   │   │   │   └── index.source.html
+│       │   │   │   ├── index.html
+│       │   │   │   ├── jacoco-resources
+│       │   │   │   │   ├── branchfc.gif
+│       │   │   │   │   ├── branchnc.gif
+│       │   │   │   │   ├── branchpc.gif
+│       │   │   │   │   ├── bundle.gif
+│       │   │   │   │   ├── class.gif
+│       │   │   │   │   ├── down.gif
+│       │   │   │   │   ├── greenbar.gif
+│       │   │   │   │   ├── group.gif
+│       │   │   │   │   ├── method.gif
+│       │   │   │   │   ├── package.gif
+│       │   │   │   │   ├── prettify.css
+│       │   │   │   │   ├── prettify.js
+│       │   │   │   │   ├── redbar.gif
+│       │   │   │   │   ├── report.css
+│       │   │   │   │   ├── report.gif
+│       │   │   │   │   ├── session.gif
+│       │   │   │   │   ├── sort.gif
+│       │   │   │   │   ├── sort.js
+│       │   │   │   │   ├── source.gif
+│       │   │   │   │   └── up.gif
+│       │   │   │   └── jacoco-sessions.html
+│       │   │   ├── pitest
+│       │   │   │   ├── co.com.bancolombia.products.config
+│       │   │   │   │   ├── AdapterConfig.java.html
+│       │   │   │   │   ├── UseCasesConfig.java.html
+│       │   │   │   │   └── index.html
+│       │   │   │   ├── index.html
+│       │   │   │   ├── linecoverage.xml
+│       │   │   │   ├── mutations.xml
+│       │   │   │   └── style.css
+│       │   │   └── tests
+│       │   │       └── test
+│       │   │           ├── classes
+│       │   │           │   ├── co.com.bancolombia.products.AddProductsIntegrationTest.html
+│       │   │           │   ├── co.com.bancolombia.products.GetProductsIntegrationTest.html
+│       │   │           │   └── co.com.bancolombia.products.config.UseCasesConfigTest.html
+│       │   │           ├── css
+│       │   │           │   ├── base-style.css
+│       │   │           │   └── style.css
+│       │   │           ├── index.html
+│       │   │           ├── js
+│       │   │           │   └── report.js
+│       │   │           └── packages
+│       │   │               ├── co.com.bancolombia.products.config.html
+│       │   │               └── co.com.bancolombia.products.html
+│       │   ├── resolvedMainClassName
+│       │   ├── resources
+│       │   │   └── main
+│       │   │       ├── application.yaml
+│       │   │       └── log4j2.properties
+│       │   ├── sonar-resolver
+│       │   ├── test-results
+│       │   │   └── test
+│       │   │       ├── TEST-co.com.bancolombia.products.AddProductsIntegrationTest.xml
+│       │   │       ├── TEST-co.com.bancolombia.products.GetProductsIntegrationTest.xml
+│       │   │       ├── TEST-co.com.bancolombia.products.config.UseCasesConfigTest.xml
+│       │   │       └── binary
+│       │   │           ├── output.bin
+│       │   │           ├── output.bin.idx
+│       │   │           └── results.bin
+│       │   └── tmp
+│       │       ├── bootJar
+│       │       │   └── MANIFEST.MF
+│       │       ├── compileJava
+│       │       │   └── previous-compilation-data.bin
+│       │       ├── compileTestJava
+│       │       │   └── previous-compilation-data.bin
+│       │       └── test
+│       ├── build.gradle
+│       └── src
+│           ├── main
+│           │   ├── java
+│           │   │   └── co
+│           │   │       └── com
+│           │   │           └── bancolombia
+│           │   │               └── products
+│           │   │                   ├── MainApplication.java
+│           │   │                   └── config
+│           │   │                       ├── AdapterConfig.java
+│           │   │                       └── UseCasesConfig.java
+│           │   └── resources
+│           │       ├── application.yaml
+│           │       └── log4j2.properties
+│           └── test
+│               └── java
+│                   └── co
+│                       └── com
+│                           └── bancolombia
+│                               └── products
+│                                   ├── AddProductsIntegrationTest.java
+│                                   ├── ArchitectureTest.java
+│                                   ├── GetProductsIntegrationTest.java
+│                                   ├── Utils.java
+│                                   └── config
+│                                       └── UseCasesConfigTest.java
+├── arbol.txt
+├── build
+│   ├── libs
+│   │   └── products-api.jar
+│   ├── reports
+│   │   └── configuration-cache
+│   │       └── 4yoe0zes5iqy5bfq1dqh6zbyu
+│   │           └── 5syj69w0p5bq0vfk0ymlzmaoi
+│   │               └── configuration-cache-report.html
+│   ├── sonar-resolver
+│   └── tmp
+│       └── jar
+│           └── MANIFEST.MF
+├── build-cache
+│   ├── 00434f515dbbed3857f72973a252519c
+│   ├── 0178bd22fc6217a9303bf82238ce306d
+│   ├── 0226b5e0ddb8dfa5214ad88447b390c7
+│   ├── 03777157f9cd3983702c9baf352cdd18
+│   ├── 0485489e70bc67d714a201c1fc8f2cbf
+│   ├── 04aa1f8a57fb1c1307fc80260ee75402
+│   ├── 076b9b0ebd205607011c97c1e1fe3e70
+│   ├── 07d4e935665882fe69e30a02461f0e3f
+│   ├── 099c86a3f5f24c8e60d7ad86e358ab3e
+│   ├── 09aafe56ea9c40f210d3e9cff85acebe
+│   ├── 0a94e231a4615b3d5bc8235f9dcf4490
+│   ├── 0aede61ac5b5c055677fc0b8b49f96ad
+│   ├── 0b6d6356b8af554d963d0ed1723c8c4b
+│   ├── 0bc2f9b9c43c203b0a95ded114cf63dd
+│   ├── 0e08a0f8c74718c69a8702ee8bb7a976
+│   ├── 0e0e5bc395d9a482f5a10a686f345215
+│   ├── 0e6b82ad51821fc361a6c24f183b3afd
+│   ├── 0f6bb61b47416de9c6ea891411ef0663
+│   ├── 10805f81bc5b5e6641e3051e9b2edb26
+│   ├── 108212104e0aa03c247b158dc1eb043a
+│   ├── 1130b1de1c3be5ac97495701df4384a7
+│   ├── 1169ec3a60ca11d3218c7a0dec0d8903
+│   ├── 12aafe2dbbfaa6f317f865278f2e9ce5
+│   ├── 12c09fc2927dedf58ecfd6f5b428ac1c
+│   ├── 13e22a301d89ca6fbfea7dd9422b7891
+│   ├── 14cf71acfe11fe7e968ee20d4ee1d030
+│   ├── 151953bc0341031af2598d1bdde6b7a3
+│   ├── 15d860c49c45b140605547882e1d1755
+│   ├── 16081573b2dc5b8e737a177ebfdcc881
+│   ├── 160ea426923c6bc60534585fa1cbf2df
+│   ├── 16fd52946ada191e868603b27640289b
+│   ├── 176ccfadd9200a51b1607fa11775da29
+│   ├── 18732ef7adc2a36b337e4d6d80905699
+│   ├── 1b75e01f1ab1630bed4d62b6600e415f
+│   ├── 1ba1488cb39c97ceddaa62639f0c7247
+│   ├── 1c32efa94618968d2f349d69b1718542
+│   ├── 1c38c8938ed7bdb29d4ed33c983f9064
+│   ├── 1c494b119d85e59fd6962ab91708fcc0
+│   ├── 1cb7106b4ae709ad35d2fee7476cf309
+│   ├── 1ebf1919711bfb33f9fe8c8989721dbb
+│   ├── 203896fe9e2ab02f58045888f216d8c4
+│   ├── 215e6d64258a61fa765df3efe9ce8b77
+│   ├── 218b2db80b0f36c872a6c297652a851f
+│   ├── 229f8f5e7238e5057362e8a63dfaa436
+│   ├── 22b312c919d3999abb48f783d484cd94
+│   ├── 22cfca098ab01e625ce5895d41e9cab5
+│   ├── 230b044e92db68eb9ab7918302934a12
+│   ├── 234fb4d66136a3edbadd873c9ffd2dfe
+│   ├── 238d92057f7dcc64f14da04855e51b1e
+│   ├── 23eb53f754cb834033065e84df00d1fc
+│   ├── 23f57361bb40feabbf9e457675c50896
+│   ├── 26830b2fb38b56e07f8a76227ee56ed6
+│   ├── 26967ff71c39eae7d738a4ba7250f53c
+│   ├── 26ca1dfb65799ce69662854bff300809
+│   ├── 288cd76e6f292a1922a519c2c98e4828
+│   ├── 29a16a45498a0bec3403ac671a1c79fd
+│   ├── 29b86ffd3b479303558895ec6264d416
+│   ├── 29eb79080c1c2e802b64f4600ca8d9b4
+│   ├── 2aeee73fbcfb05738774448ace98b839
+│   ├── 2b744ff01ed66cde4c1e9a318d29cd14
+│   ├── 2ba810269056ac6f0a87a7835268b212
+│   ├── 2bb354f060c8f8e6d70ec5f1065c301e
+│   ├── 2bc50feb88030fec000ecced4f7dfe6d
+│   ├── 2be5d6eedab769a166339ea3a5393dae
+│   ├── 2c8b1af3c852aaaba7739ea06caf6064
+│   ├── 317db29cc293dc07bd1cf5f663e2b2b1
+│   ├── 32549b4ecc698740e030ffeb51e3234a
+│   ├── 33505040a8380daa0235fcc4da2d52fe
+│   ├── 3371aaac82083683337646d8b35cf3c0
+│   ├── 3392ac4c088687c56f91ec3d76418e83
+│   ├── 34025fcb21f85ace3e4fae8e90245164
+│   ├── 34196adf8b379f8fabfd4e63237f0c70
+│   ├── 35a53136c9a44023ff1e8e9b59f0d4aa
+│   ├── 37a8cf52ce94879fe77ae479a820db8b
+│   ├── 37bd5dd87e1b035991947ce91a45cfff
+│   ├── 382e828ecb25f9a7759691a37e154b35
+│   ├── 3841aff4e05b841a99f11eadee1d3179
+│   ├── 3a6a4a92f80a59dbdb89b07f5f004cfa
+│   ├── 3afe8663f5faa6e650041f50a502493c
+│   ├── 3b3702ec84abfba3bf68d4cee7c43cc8
+│   ├── 3b816a7f56ae0a33550e83dd2aa2696d
+│   ├── 3bd0e2c45f7ee391185ead1c41156593
+│   ├── 3bdf661ac38a3e6ec00aa75641e381f0
+│   ├── 3ca8215b2bf74301e3de139897046633
+│   ├── 3d6dabcd877f8a2325f14baf52c397fd
+│   ├── 3f3bf8960a4bdbe201295f304e789559
+│   ├── 3f78ccd580b64d220eaa6119c453cd8b
+│   ├── 407b90cecd0cae6481f08d0de0c54222
+│   ├── 408b9818b4fc4f3f00936b7dbf858852
+│   ├── 40caa8a5ad6f92160e68182acd9e2027
+│   ├── 413616fa799e332078784a2a7af19c70
+│   ├── 4153005ac85f671eb2cb1620a805160f
+│   ├── 415de41d9961991c9f888a15213ea113
+│   ├── 416ad84ce394f55fd0d72d7f835a20ed
+│   ├── 419481721fb8e171a60db35ccc753f37
+│   ├── 41a5ab41cffa868f0dd9a6c61ca82e1d
+│   ├── 41e236e312d7f9015f55270c97b54c2e
+│   ├── 4272c87c7befafdaf67bc6c80f5067e5
+│   ├── 444921da0cb0e98d5f1bff7e235d65f2
+│   ├── 44cc9d209c9ce184f6f174067525b005
+│   ├── 453d92898b1179ce9cf6ef2dc2755239
+│   ├── 45fc0de0465f06b2bf12341c6a08a6a0
+│   ├── 4611e703cdb799d8398e33e6faf740a0
+│   ├── 467733feac45051a079b760d76c782cb
+│   ├── 47b26fa28761e3cf87a4817ed945f2d3
+│   ├── 48351f270fbac1f87b02658f67ab586c
+│   ├── 4849e0d0898bc8255ee5f392cf06650d
+│   ├── 4873208c479d2e28b93d84bc8453c010
+│   ├── 48ee874ead3e64f12448a17e9a28904f
+│   ├── 499fc019ce5b56de1583b06bc4246310
+│   ├── 4a0d45a56e3ae167f787636c2945d2a4
+│   ├── 4a34aeb756580adb170b6880e3a9979f
+│   ├── 4a4971b6b65fc704882d6d19d1641db6
+│   ├── 4aabaf39c31724b2638a437798915c56
+│   ├── 4b31600b2aaa66cdcfada08b5da46522
+│   ├── 4c7fb9dcb6173a49bb7c0f3b6962dab1
+│   ├── 4de5f3f48864853886fc2a4a7cbf88fe
+│   ├── 51760ddd2bb17ce5905612f74a2f90ad
+│   ├── 52dc072ae34e62f670776059caf98e70
+│   ├── 52e526a986961024d0bb5dc7a829c407
+│   ├── 52edce66183eee06493d604dee124cea
+│   ├── 54330d93d512abc7c9ea58db3c5b73d8
+│   ├── 54eb8343698189f7b0c22103b0637be6
+│   ├── 557bb7741fc80db3426a753540e7d296
+│   ├── 56666d7afe0e8a73818947d2ca409288
+│   ├── 5728709d233a6b468bdc95855bdc1d26
+│   ├── 573785bd7e6789fd319e6a5d9595c241
+│   ├── 57d17d224207b583b7656fb3e59de36e
+│   ├── 583c127a912fa1e2dbad2439941258ee
+│   ├── 58853b86f4ca52462666379228c569fe
+│   ├── 58f0fe9bef14f6b71ef146ecd5ab833a
+│   ├── 5a197a92e0d72c6cf877c334a7dcf97f
+│   ├── 5a523ff12463a34f24880140c684b8c1
+│   ├── 5aeb2e2d473c7b3c8e6ca149a878f33c
+│   ├── 5ccdf8c0f21d7e878544ff3339adcd8d
+│   ├── 5cd4177b042fb74b5a5b8163395b96d8
+│   ├── 5d420c6bd53f1d503f46070cdd683e56
+│   ├── 5e404861bddf346144253ef35165f144
+│   ├── 5e49bd4e7629293e70e69f87a02c35ef
+│   ├── 5f508bb67f65648b36bf5090a4df9fa3
+│   ├── 5fc2efe1c4ad86a5375d6036e56762a3
+│   ├── 60510dfcb9590e93f9aae47c67c482b2
+│   ├── 60e634171d762c6f5b8d29d2acb9afb1
+│   ├── 6103bf0a40f1a6bf47325c887ffa92b1
+│   ├── 61153806128073bd33ea431a11307061
+│   ├── 611bf86f9ad3524383a31c204de4e555
+│   ├── 6196975c578c18476a6e43b940a1c8fd
+│   ├── 619976bcb8c176cf779e6eb93bc962b0
+│   ├── 6315f7c021cbf5499207597e9ea026a6
+│   ├── 63b45f5f6709b881a1dbb06c637c56f1
+│   ├── 64cde36d8324b7e7d96efa15a24a03e8
+│   ├── 64ee01ea4325b9ec96a0e2ccaf34b86b
+│   ├── 65f8189aaa6e1bfd238c1ef8ebd49299
+│   ├── 660fe90dd519eb0738f41dd3c39285b4
+│   ├── 661d0fd2e5c0f610accbfd68d2435b86
+│   ├── 6711507adcac9a65e83447fe934d390b
+│   ├── 6729c3c84364f659297a625eb90eb2ab
+│   ├── 679950644486ebf7ad7888336c6836eb
+│   ├── 6840317db2eb1820cb4a5dbec536d102
+│   ├── 68e993420005b82394f5288749872c35
+│   ├── 690eb7d2f9efb80c2e02d26974b1b48a
+│   ├── 6a2b96769a91f443660c16dd719fc3e3
+│   ├── 6a3f98f65277c461f07810f24bb0f5fe
+│   ├── 6a9d9b7453e3872ca8531fe63ccc59b5
+│   ├── 6ae59bfd724879fa719f7fead3b195e5
+│   ├── 6b44b3c9ad2dcda2f79e1de2be8b26f3
+│   ├── 6d1802044ec11a9c78894ce470d53193
+│   ├── 6d5c443b3437ab1b46eafdcaaae1b06c
+│   ├── 6e2c43e25427d9a51284210118fac4ba
+│   ├── 6ff9011a26b03dc341aea390d8e1b75b
+│   ├── 70093af5d5d5d382bea3dd04714cdaa3
+│   ├── 705c2af0de914d089c3bb6fa6489ebaa
+│   ├── 705e10c645e121e196e133598f812601
+│   ├── 70fe2ec1e418a1afcaef1a0b50b96755
+│   ├── 717e2ec881ba294a6736444307342880
+│   ├── 71ddf384d4de52b2951f78afdc04cfc4
+│   ├── 72183fdd21945f5319d82fb25973d236
+│   ├── 7326afaaeabc263ddaffe8dbd5f20ca2
+│   ├── 73d9c267f257664270723f9a9c995d94
+│   ├── 743d38b06597680be8407359ad3907c9
+│   ├── 7523d20c486115d8bfbe9d832e78cb9e
+│   ├── 759eba86e55cbc65b0eb8b650689659b
+│   ├── 76f3caa516a2794c35d5bed7124aac8b
+│   ├── 78879746b5737bf4884240af734f9f24
+│   ├── 79a8588b2fd7ba2acae4a41b6a2e3bad
+│   ├── 79a8e5ca25e2e2d5b7e9a935837f71f4
+│   ├── 7a443d97c5f6d9a3deb5cf47d568f01f
+│   ├── 7a67ac54f2555611253d034ba3765a6e
+│   ├── 7acb9e0195c807b85343ff330eb2673c
+│   ├── 7e59df4a57a9f9863ff515c71a6c604f
+│   ├── 7e6ac8a4a8cc6fd3b4e7b19e98c71f47
+│   ├── 7fdb7c5debdfd206f889c0821d8803ba
+│   ├── 81103f2388e7e5ca8106f957218b57c4
+│   ├── 81166473e9d08ec471d13c6fde639825
+│   ├── 81432aff908d9f220e5327fd8a1485ab
+│   ├── 819a1debcfbc87a599b2b496ff23a1c0
+│   ├── 819ddd15578e30f473a948c24a9df0de
+│   ├── 82d938db2f811231157f9df808be3bd4
+│   ├── 83c19bab3ff10c4063273c97cb7a3ba2
+│   ├── 841f1934de794a0bca868feff5de5934
+│   ├── 84311521db715562f7609f401d2aa886
+│   ├── 8811562346dd07f7a1f6dc358e0c5cd7
+│   ├── 893e5469526098741f99241c0127a096
+│   ├── 89e1ab969b88f4636fddef112dad9ffc
+│   ├── 89f5893cba2c99d3c28f670225f930a7
+│   ├── 8b90ede82cafbd4ad3ce4622f350e829
+│   ├── 8b9f0945f407084255610a0a3469233b
+│   ├── 8bbbb1f84f04be2987c0525f18c2ceeb
+│   ├── 8c4c261101066e47239135f2a5ce8076
+│   ├── 8c5af2c6debeed0d6a7d60474da64232
+│   ├── 8c7aced573b358ac98dc4fe355b3f374
+│   ├── 8dc591a99bdbef616bb2b9ff6d04933f
+│   ├── 8eb748ff43cb971b8cb00caa0d5ce837
+│   ├── 8ee7b3879bfaa7045aa491245ab44560
+│   ├── 8fa916272aa1a4302c11b25542d19124
+│   ├── 903812dfad040602fc53730c5f851810
+│   ├── 91512a46373309e9a58fc63ce5e2d679
+│   ├── 91ab8a0959347683c17addb44c72f6c3
+│   ├── 91b64fb101c31f775865716c25ff86c9
+│   ├── 91dc2a2623d437d44d2f1f032f32b4f2
+│   ├── 92e49f879c361a08c77137cf0cb945fb
+│   ├── 933a0d14acc58a2c4a203b373355ce43
+│   ├── 934f8ebdb39caf3aaea34b253185172e
+│   ├── 937e03fb99406e7d0627825e0cd8094a
+│   ├── 958ff1857c2acd22898b869cc46acf6f
+│   ├── 9661212a7f932c9d5a6843f59e248978
+│   ├── 976cba610fc255e7eebfd1fd31ce6d7e
+│   ├── 98c7bbd18affcd5409c7f8042ede67c6
+│   ├── 98f30f457ad0c9ccc18c7597007fcc79
+│   ├── 993003028a2ed73f1ec4d9429c672e00
+│   ├── 99bbf5685ea73fee469ac12fbb7597bc
+│   ├── 9ba923eb53e39d6535ba1a6a6f379430
+│   ├── 9c5daceba8d099612c77e07c02fdbd6a
+│   ├── 9c6bf31d4f2492d1acf22b75466359d6
+│   ├── 9c6d7b5d6a595683024c757f3c877a1e
+│   ├── 9c72e2888ba381e5ec60a3a5108ad507
+│   ├── 9ddca16798e7688cc429d2f75c41d3a2
+│   ├── 9df069cb5d44447d57898e4af0c56ca6
+│   ├── 9f03e6dff10203fcb9e9df6154f0bcf1
+│   ├── a03a0759eb696089e01c90fe21c9c3b8
+│   ├── a178c81cd6d1a12d8003afdce2bde567
+│   ├── a2247dd3fe42ceff0a8c28d44e471bc6
+│   ├── a348facb6aa0c3634b8f3d04e76b1901
+│   ├── a3eec3e84f34ae16fa531e6716125a88
+│   ├── a45358026e1268713c0cb8c2998eef41
+│   ├── a488d35563f489d4ea3e484a6f320a75
+│   ├── a4fcfc0ca2445b02d515bab3d1ec1f96
+│   ├── a518430ef2c25343a3d44869fa71e645
+│   ├── a5b8af0c552e2c840313240da5c45a83
+│   ├── a648a867a8fc6e00596bcb6d5254e6b4
+│   ├── a68e15c4d00bc720d35d0aac1aae7362
+│   ├── a7e731fe8a42c124e77d868595e5c310
+│   ├── a7f259b6ca09d3e476a465ac923a3f08
+│   ├── a81f793117a69f0f4ace37765238b533
+│   ├── a872190c08aa03bb94cc6f8d153ed72c
+│   ├── a8e48548ef568e1907a63eff5a39155a
+│   ├── a9147a6ad020109c9265627b24e06ce0
+│   ├── a932a091f94ba146181b5cfcb993e4a8
+│   ├── a968c3ee36ce198ace9773a4ec9a8e17
+│   ├── a998b4fde89714b0a98f9239203f9b85
+│   ├── ab53bd3ab90dd0a7ad63f9905025ebb3
+│   ├── ab8fd1c65b51e6c50fc518cd861a35e8
+│   ├── abd46ec0adb9eb24cb09d48328f16692
+│   ├── ad2d7c85fd17f8abae1199004ca77e8d
+│   ├── ad80a1567c0f18ce80dc2b02095896a1
+│   ├── ae210110d808fd43cc0052976374bae0
+│   ├── aed914d50e6301ff7fb4b81be28f5ed2
+│   ├── aef7554f5d970483662016cfa3a81faa
+│   ├── af2d03f3db92dfcd5b0084dbe9fcbe00
+│   ├── af5e20977f611861e5c063c002fe2d51
+│   ├── afddf6b5c8599e6a2767154aee6bdcae
+│   ├── b083921ec9f963428ae357256341a498
+│   ├── b182af276023eaad2333bd21c0e4c189
+│   ├── b2449d0a7f44cc0df05bdbf17f743a2a
+│   ├── b27a05c66afd3f50595f60610f1eafcb
+│   ├── b3588bd398405b521a30225f709be552
+│   ├── b3fe9548c6c9c2b67dc374f86866154e
+│   ├── b4b36aa191172cef6ac2113bd90716b9
+│   ├── b4e411a6ffc4d69fb00688b7992ab81b
+│   ├── b4ff751bc9c9d0f10f737cb79189f99d
+│   ├── b66b4e0b19acfc0b417d412d074ea2be
+│   ├── b72703e76e3f9a3be00c9757ac867771
+│   ├── b7465639785665e531ce967009b6645e
+│   ├── b78b272649896b717c9fd157677a7add
+│   ├── b7c922e1c4bd6f71da33045a87576c2a
+│   ├── b826b34ff438881088cdbf45217aa01f
+│   ├── b83d4a4b2f0ab04113e349d51f2608a9
+│   ├── b972c739c39cf594db2f4f05e3ba9b4d
+│   ├── b9d435e4a65f42db7d99cb87c9da4854
+│   ├── bc70a7e1f06c8384828cbc39fd2f08fe
+│   ├── bcd82486b0db5cd0b3f0310b9238e174
+│   ├── bd5b0d829c76f25a7136c136ab061b76
+│   ├── bdc8668f2f414e52cea8749cdc123fa7
+│   ├── bf3b85b98daefd8db16b3f3482653ccc
+│   ├── build-cache.lock
+│   ├── c076897832eaca97dcaca955918b2289
+│   ├── c1498bfe918acc09eb4527aa03ece5e9
+│   ├── c15503efc6da886c50f0b56da0cb2fc8
+│   ├── c15a305daa29d37808bbf72f1823883d
+│   ├── c2ebee1ba8569cd274cd0735b976a282
+│   ├── c395021bce03c42f9c333e0479dd73d5
+│   ├── c4130b754a309e713987db738a8cd8a8
+│   ├── c428db8882c53f6db20add42aee484dd
+│   ├── c43fcb3cf477a1c7fc42cdfa2c56c846
+│   ├── c61c4097bcfe428a0a18687716b5591f
+│   ├── c730f3a5c64bf2db0225e1400fd58ca5
+│   ├── c8167058d77e7f9da6b684609621c8e2
+│   ├── c8a98f99d50015a28991bd83b8d3a6d8
+│   ├── c8b2c070b886cac2f59d63f38f151689
+│   ├── cb149d417220264295afefffeedcb8b9
+│   ├── cbb1078e9c871b2edf3ac23d82878c62
+│   ├── cc2222dbbececae86cd7773c99fd8b49
+│   ├── ce38602d189f5a858707b0f8f22bec56
+│   ├── ce4a7cc4fc57ba2e74efbbb136440d86
+│   ├── cef20dafa5debf6bf8ff84131b890d72
+│   ├── d0819f42a45884ab50f41dc93d61da6b
+│   ├── d085bf29e7133b537c3f38e79445dd1a
+│   ├── d0e6989445ce10cf7ff11f792f139b58
+│   ├── d1983f0b229c019c79aa357797eaf16a
+│   ├── d1f0ac7a7202f336731d0404f80c4cfc
+│   ├── d1f9289a7caf82e3eee62cf799d60d28
+│   ├── d30f662156523803a56193c892e988c9
+│   ├── d39319944557bd7dacbdf8c5c9ed1f88
+│   ├── d39447dd5768dc6f42c031b00975e5c4
+│   ├── d526e2e2970717c8d7476b3a313996db
+│   ├── d5c8535c3472b24ed754095b23bb3c69
+│   ├── d6f363f0221964e810e30cb4cd67fdc9
+│   ├── d81ae709d6fd9b2f725fef1d9dfb5812
+│   ├── d84fb69c30c58b490e97cb50bc9e0a2b
+│   ├── d8aaf4866325dce617c98904c7169ca6
+│   ├── d94c6a8c0a576973fe922f1b28c834a1
+│   ├── da04805c0dddf718e513c58c7473504c
+│   ├── dab0cfa1bf79ac8f8c20a9ec7476d259
+│   ├── db287cd31b3e94d5bbd870371c618cce
+│   ├── db4c47d266c6921f3caeac27678d30dc
+│   ├── db9dd8e2f8612a25d10c211c76b2cc55
+│   ├── dba70feea5ddfb00c63640d4de020608
+│   ├── dc1606948f232c0ee7bb043410296f2e
+│   ├── dc1bf63b0b3e46dc61e97208ea0a8eef
+│   ├── dc5b856a70b423cde5c8dc9d9e648803
+│   ├── dcbdc537663bf0dfbf340b94adeebece
+│   ├── dcd33d5f73c203cfefdcc925f71c4d09
+│   ├── dd505a7d53746b2f2cfbaec52c9cd9d2
+│   ├── dd5dd8f92a19115af2a0d539b256b952
+│   ├── dd8784ddf292d4a777d4603a761f7ff4
+│   ├── de58b9df938d767c86805c194483b89f
+│   ├── decea806513e633142c206a0299829a7
+│   ├── defacbdf2a66c2f7ffc436a3677098d4
+│   ├── df257200249d2b8de3db8dff7971711f
+│   ├── df8814406e4183179d4a2bdf92907225
+│   ├── dfb693bffc246fd51169ba3ed6dba4a9
+│   ├── e17b49748b9c670f9b1feca6b878dd35
+│   ├── e1c76960fe33f8b08744132be2ee3aa6
+│   ├── e2a0a474aa73b440984560b024b20a16
+│   ├── e2a8a9736ce4d6975a95c34274641f56
+│   ├── e2dbf6d0e8e82255918d1f0a8264f5fe
+│   ├── e35d37336d9022366193f2e19e14fd31
+│   ├── e35e97c2464a9fb7e25f2a5ad5ffd556
+│   ├── e3c9bd15acd583487608c7c0a609ce06
+│   ├── e45d8cf705d8a0835c5c96123ddf2fd8
+│   ├── e46a05319790d711a12b9cc8a954ec69
+│   ├── e4965bb1c18b7f610d85d238f54e7812
+│   ├── e5f5a7631c3636cfa93da37bd736fa01
+│   ├── e5f68a5ed22f1ccbe0b0ec52d9170497
+│   ├── e64cb931807072536389e0a5346939c9
+│   ├── e7a1668ae2912d12caed48af13f660aa
+│   ├── e814425b3a8cae3df3631aaccd6cb832
+│   ├── ea174d573010ded29fee9913e3a6dca8
+│   ├── eada41b9af68d90afc95ddcd48f260e2
+│   ├── eb9b2a878f452b2eea88de095f44b926
+│   ├── ec7827c74f968eaf5265be22ff7f3eef
+│   ├── ecf3170c2e48c8470f776ecc083aa87d
+│   ├── edf9af7f9772ff2646fafa3ea8486ac3
+│   ├── f013a09388f7b10d1017fbce732f827a
+│   ├── f0d351b095c619a6e43b17184e0c5111
+│   ├── f104c7c50115c7e0ea209aa85de99101
+│   ├── f1cbc4236a50de317101338833e9ab4f
+│   ├── f20f0c2197f7761f75d5a50de246f70e
+│   ├── f29d0b49a1ed45cae195730b6d85153c
+│   ├── f2b0db930168bb3189ef5bb1afe8f221
+│   ├── f380be7cfa6e964ee60b3aeb4e49b200
+│   ├── f3c10a74b3793d2a521d7499c415818f
+│   ├── f4f3983ce10f54820570331d028ddd75
+│   ├── f544d0617648a78c3b5403ca74356d1e
+│   ├── f5ffa0f1d4fa74ec4f8575c99e607d6f
+│   ├── f7707b183ce4a7d75a160b94c633d400
+│   ├── f7b14e7d63b92a04535518424c50360d
+│   ├── f82d316dc1a36b7218e2f85cc979e9d0
+│   ├── f87d790a084b453df90453bd5a06908a
+│   ├── f9f7974e7b8e1854aaedf3c91fdbc853
+│   ├── fa85bc53c9b5a96d2c93328221b5116b
+│   ├── fbfb5b780ce1cf5c7b4b41d69f1ed646
+│   ├── fd89456fbc650b97b3adf1a66ef66a65
+│   ├── fdfbc52ab3c61265ec073fed83e688eb
+│   ├── fe4bf99065764b7582cef65611990368
+│   ├── ffaf1c6c09273cdd346b909dea93c6a6
+│   └── gc.properties
+├── build.gradle
+├── deployment
+│   └── Dockerfile
+├── domain
+│   ├── model
+│   │   ├── build
+│   │   │   ├── classes
+│   │   │   │   └── java
+│   │   │   │       └── main
+│   │   │   │           └── co
+│   │   │   │               └── com
+│   │   │   │                   └── bancolombia
+│   │   │   │                       └── products
+│   │   │   │                           └── model
+│   │   │   │                               ├── product
+│   │   │   │                               │   ├── addproducts
+│   │   │   │                               │   │   └── gateway
+│   │   │   │                               │   │       └── ProductRepositoryGateway.class
+│   │   │   │                               │   └── getproducts
+│   │   │   │                               │       └── gateway
+│   │   │   │                               │           └── ProductQueryGateway.class
+│   │   │   │                               └── shared
+│   │   │   │                                   ├── cqrs
+│   │   │   │                                   │   ├── Command.class
+│   │   │   │                                   │   └── ContextData.class
+│   │   │   │                                   ├── exception
+│   │   │   │                                   │   ├── BusinessException.class
+│   │   │   │                                   │   ├── ErrorCode.class
+│   │   │   │                                   │   └── ValidationError.class
+│   │   │   │                                   ├── model
+│   │   │   │                                   │   └── ProductMainDTO.class
+│   │   │   │                                   └── policy
+│   │   │   │                                       └── ProductKeyPolicy.class
+│   │   │   ├── generated
+│   │   │   │   └── sources
+│   │   │   │       ├── annotationProcessor
+│   │   │   │       │   └── java
+│   │   │   │       │       └── main
+│   │   │   │       └── headers
+│   │   │   │           └── java
+│   │   │   │               └── main
+│   │   │   ├── libs
+│   │   │   │   └── model.jar
+│   │   │   ├── pitClasspath
+│   │   │   ├── pitHistory.txt
+│   │   │   ├── reports
+│   │   │   │   └── pitest
+│   │   │   │       ├── co.com.bancolombia.products.model.shared.exception
+│   │   │   │       │   ├── BusinessException.java.html
+│   │   │   │       │   ├── ErrorCode.java.html
+│   │   │   │       │   └── index.html
+│   │   │   │       ├── co.com.bancolombia.products.model.shared.model
+│   │   │   │       │   ├── ProductMainDTO.java.html
+│   │   │   │       │   └── index.html
+│   │   │   │       ├── co.com.bancolombia.products.model.shared.policy
+│   │   │   │       │   ├── ProductKeyPolicy.java.html
+│   │   │   │       │   └── index.html
+│   │   │   │       ├── index.html
+│   │   │   │       ├── linecoverage.xml
+│   │   │   │       ├── mutations.xml
+│   │   │   │       └── style.css
+│   │   │   ├── sonar-resolver
+│   │   │   └── tmp
+│   │   │       ├── compileJava
+│   │   │       │   └── previous-compilation-data.bin
+│   │   │       └── jar
+│   │   │           └── MANIFEST.MF
+│   │   ├── build.gradle
+│   │   └── src
+│   │       ├── main
+│   │       │   └── java
+│   │       │       └── co
+│   │       │           └── com
+│   │       │               └── bancolombia
+│   │       │                   └── products
+│   │       │                       └── model
+│   │       │                           ├── product
+│   │       │                           │   ├── addproducts
+│   │       │                           │   │   ├── gateway
+│   │       │                           │   │   │   └── ProductRepositoryGateway.java
+│   │       │                           │   │   ├── model
+│   │       │                           │   │   └── value
+│   │       │                           │   └── getproducts
+│   │       │                           │       ├── gateway
+│   │       │                           │       │   └── ProductQueryGateway.java
+│   │       │                           │       ├── model
+│   │       │                           │       └── value
+│   │       │                           └── shared
+│   │       │                               ├── cqrs
+│   │       │                               │   ├── Command.java
+│   │       │                               │   └── ContextData.java
+│   │       │                               ├── exception
+│   │       │                               │   ├── BusinessException.java
+│   │       │                               │   ├── ErrorCode.java
+│   │       │                               │   └── ValidationError.java
+│   │       │                               ├── model
+│   │       │                               │   └── ProductMainDTO.java
+│   │       │                               └── policy
+│   │       │                                   └── ProductKeyPolicy.java
+│   │       └── test
+│   │           └── java
+│   │               └── co
+│   │                   └── com
+│   │                       └── bancolombia
+│   │                           └── products
+│   │                               └── model
+│   │                                   └── product
+│   └── usecase
+│       ├── build
+│       │   ├── classes
+│       │   │   └── java
+│       │   │       ├── main
+│       │   │       │   └── co
+│       │   │       │       └── com
+│       │   │       │           └── bancolombia
+│       │   │       │               └── products
+│       │   │       │                   └── usecase
+│       │   │       │                       └── product
+│       │   │       │                           ├── addproducts
+│       │   │       │                           │   ├── AddProductsPayload.class
+│       │   │       │                           │   ├── AddProductsUseCase.class
+│       │   │       │                           │   └── validation
+│       │   │       │                           │       └── ProductValidator.class
+│       │   │       │                           └── getproducts
+│       │   │       │                               ├── GetProductsQuery.class
+│       │   │       │                               ├── GetProductsUseCase.class
+│       │   │       │                               └── validation
+│       │   │       │                                   └── GetProductsQueryValidator.class
+│       │   │       └── test
+│       │   │           └── co
+│       │   │               └── com
+│       │   │                   └── bancolombia
+│       │   │                       └── products
+│       │   │                           └── usecase
+│       │   │                               └── product
+│       │   │                                   ├── addproducts
+│       │   │                                   │   ├── AddProductsUseCaseTest.class
+│       │   │                                   │   └── validation
+│       │   │                                   │       ├── ProductValidatorTest$1.class
+│       │   │                                   │       └── ProductValidatorTest.class
+│       │   │                                   └── getproducts
+│       │   │                                       ├── GetProductsUseCaseTest.class
+│       │   │                                       └── validation
+│       │   │                                           └── GetProductsQueryValidatorTest.class
+│       │   ├── generated
+│       │   │   └── sources
+│       │   │       ├── annotationProcessor
+│       │   │       │   └── java
+│       │   │       │       ├── main
+│       │   │       │       └── test
+│       │   │       └── headers
+│       │   │           └── java
+│       │   │               ├── main
+│       │   │               └── test
+│       │   ├── jacoco
+│       │   │   └── test.exec
+│       │   ├── libs
+│       │   │   └── usecase.jar
+│       │   ├── pitClasspath
+│       │   ├── pitHistory.txt
+│       │   ├── reports
+│       │   │   ├── jacoco.xml
+│       │   │   ├── jacocoHtml
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.addproducts
+│       │   │   │   │   ├── AddProductsPayload.html
+│       │   │   │   │   ├── AddProductsPayload.java.html
+│       │   │   │   │   ├── AddProductsUseCase.html
+│       │   │   │   │   ├── AddProductsUseCase.java.html
+│       │   │   │   │   ├── index.html
+│       │   │   │   │   └── index.source.html
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.addproducts.validation
+│       │   │   │   │   ├── ProductValidator.html
+│       │   │   │   │   ├── ProductValidator.java.html
+│       │   │   │   │   ├── index.html
+│       │   │   │   │   └── index.source.html
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.getproducts
+│       │   │   │   │   ├── GetProductsQuery.html
+│       │   │   │   │   ├── GetProductsQuery.java.html
+│       │   │   │   │   ├── GetProductsUseCase.html
+│       │   │   │   │   ├── GetProductsUseCase.java.html
+│       │   │   │   │   ├── index.html
+│       │   │   │   │   └── index.source.html
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.getproducts.validation
+│       │   │   │   │   ├── GetProductsQueryValidator.html
+│       │   │   │   │   ├── GetProductsQueryValidator.java.html
+│       │   │   │   │   ├── index.html
+│       │   │   │   │   └── index.source.html
+│       │   │   │   ├── index.html
+│       │   │   │   ├── jacoco-resources
+│       │   │   │   │   ├── branchfc.gif
+│       │   │   │   │   ├── branchnc.gif
+│       │   │   │   │   ├── branchpc.gif
+│       │   │   │   │   ├── bundle.gif
+│       │   │   │   │   ├── class.gif
+│       │   │   │   │   ├── down.gif
+│       │   │   │   │   ├── greenbar.gif
+│       │   │   │   │   ├── group.gif
+│       │   │   │   │   ├── method.gif
+│       │   │   │   │   ├── package.gif
+│       │   │   │   │   ├── prettify.css
+│       │   │   │   │   ├── prettify.js
+│       │   │   │   │   ├── redbar.gif
+│       │   │   │   │   ├── report.css
+│       │   │   │   │   ├── report.gif
+│       │   │   │   │   ├── session.gif
+│       │   │   │   │   ├── sort.gif
+│       │   │   │   │   ├── sort.js
+│       │   │   │   │   ├── source.gif
+│       │   │   │   │   └── up.gif
+│       │   │   │   └── jacoco-sessions.html
+│       │   │   ├── pitest
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.addproducts
+│       │   │   │   │   ├── AddProductsUseCase.java.html
+│       │   │   │   │   └── index.html
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.addproducts.validation
+│       │   │   │   │   ├── ProductValidator.java.html
+│       │   │   │   │   └── index.html
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.getproducts
+│       │   │   │   │   ├── GetProductsUseCase.java.html
+│       │   │   │   │   └── index.html
+│       │   │   │   ├── co.com.bancolombia.products.usecase.product.getproducts.validation
+│       │   │   │   │   ├── GetProductsQueryValidator.java.html
+│       │   │   │   │   └── index.html
+│       │   │   │   ├── index.html
+│       │   │   │   ├── linecoverage.xml
+│       │   │   │   ├── mutations.xml
+│       │   │   │   └── style.css
+│       │   │   └── tests
+│       │   │       └── test
+│       │   │           ├── classes
+│       │   │           │   ├── co.com.bancolombia.products.usecase.product.addproducts.AddProductsUseCaseTest.html
+│       │   │           │   ├── co.com.bancolombia.products.usecase.product.addproducts.validation.ProductValidatorTest.html
+│       │   │           │   ├── co.com.bancolombia.products.usecase.product.getproducts.GetProductsUseCaseTest.html
+│       │   │           │   └── co.com.bancolombia.products.usecase.product.getproducts.validation.GetProductsQueryValidatorTest.html
+│       │   │           ├── css
+│       │   │           │   ├── base-style.css
+│       │   │           │   └── style.css
+│       │   │           ├── index.html
+│       │   │           ├── js
+│       │   │           │   └── report.js
+│       │   │           └── packages
+│       │   │               ├── co.com.bancolombia.products.usecase.product.addproducts.html
+│       │   │               ├── co.com.bancolombia.products.usecase.product.addproducts.validation.html
+│       │   │               ├── co.com.bancolombia.products.usecase.product.getproducts.html
+│       │   │               └── co.com.bancolombia.products.usecase.product.getproducts.validation.html
+│       │   ├── sonar-resolver
+│       │   ├── test-results
+│       │   │   └── test
+│       │   │       ├── TEST-co.com.bancolombia.products.usecase.product.addproducts.AddProductsUseCaseTest.xml
+│       │   │       ├── TEST-co.com.bancolombia.products.usecase.product.addproducts.validation.ProductValidatorTest.xml
+│       │   │       ├── TEST-co.com.bancolombia.products.usecase.product.getproducts.GetProductsUseCaseTest.xml
+│       │   │       ├── TEST-co.com.bancolombia.products.usecase.product.getproducts.validation.GetProductsQueryValidatorTest.xml
+│       │   │       └── binary
+│       │   │           ├── output.bin
+│       │   │           ├── output.bin.idx
+│       │   │           └── results.bin
+│       │   └── tmp
+│       │       ├── compileJava
+│       │       │   └── previous-compilation-data.bin
+│       │       ├── compileTestJava
+│       │       │   └── previous-compilation-data.bin
+│       │       ├── jar
+│       │       │   └── MANIFEST.MF
+│       │       └── test
+│       ├── build.gradle
+│       └── src
+│           ├── main
+│           │   └── java
+│           │       └── co
+│           │           └── com
+│           │               └── bancolombia
+│           │                   └── products
+│           │                       └── usecase
+│           │                           └── product
+│           │                               ├── addproducts
+│           │                               │   ├── AddProductsPayload.java
+│           │                               │   ├── AddProductsUseCase.java
+│           │                               │   └── validation
+│           │                               │       └── ProductValidator.java
+│           │                               └── getproducts
+│           │                                   ├── GetProductsQuery.java
+│           │                                   ├── GetProductsUseCase.java
+│           │                                   └── validation
+│           │                                       └── GetProductsQueryValidator.java
+│           └── test
+│               └── java
+│                   └── co
+│                       └── com
+│                           └── bancolombia
+│                               └── products
+│                                   └── usecase
+│                                       └── product
+│                                           ├── addproducts
+│                                           │   ├── AddProductsUseCaseTest.java
+│                                           │   └── validation
+│                                           │       └── ProductValidatorTest.java
+│                                           └── getproducts
+│                                               ├── GetProductsUseCaseTest.java
+│                                               └── validation
+│                                                   └── GetProductsQueryValidatorTest.java
+├── gradle
+│   ├── libs.versions.toml
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── infrastructure
+│   ├── driven-adapters
+│   │   └── in-memory
+│   │       ├── build
+│   │       │   ├── classes
+│   │       │   │   └── java
+│   │       │   │       └── main
+│   │       │   │           └── co
+│   │       │   │               └── com
+│   │       │   │                   └── bancolombia
+│   │       │   │                       └── products
+│   │       │   │                           └── inmemory
+│   │       │   │                               └── product
+│   │       │   │                                   ├── adapter
+│   │       │   │                                   │   └── InMemoryProductRepositoryAdapter.class
+│   │       │   │                                   └── infra
+│   │       │   │                                       ├── InMemoryStore.class
+│   │       │   │                                       └── ProductIdGenerator.class
+│   │       │   ├── generated
+│   │       │   │   └── sources
+│   │       │   │       ├── annotationProcessor
+│   │       │   │       │   └── java
+│   │       │   │       │       └── main
+│   │       │   │       └── headers
+│   │       │   │           └── java
+│   │       │   │               └── main
+│   │       │   ├── libs
+│   │       │   │   └── in-memory.jar
+│   │       │   ├── pitClasspath
+│   │       │   ├── pitHistory.txt
+│   │       │   ├── reports
+│   │       │   │   └── pitest
+│   │       │   │       ├── co.com.bancolombia.products.inmemory.product.adapter
+│   │       │   │       │   ├── InMemoryProductRepositoryAdapter.java.html
+│   │       │   │       │   └── index.html
+│   │       │   │       ├── co.com.bancolombia.products.inmemory.product.infra
+│   │       │   │       │   ├── InMemoryStore.java.html
+│   │       │   │       │   ├── ProductIdGenerator.java.html
+│   │       │   │       │   └── index.html
+│   │       │   │       ├── index.html
+│   │       │   │       ├── linecoverage.xml
+│   │       │   │       ├── mutations.xml
+│   │       │   │       └── style.css
+│   │       │   ├── sonar-resolver
+│   │       │   └── tmp
+│   │       │       ├── compileJava
+│   │       │       │   └── previous-compilation-data.bin
+│   │       │       └── jar
+│   │       │           └── MANIFEST.MF
+│   │       ├── build.gradle
+│   │       └── src
+│   │           ├── main
+│   │           │   └── java
+│   │           │       └── co
+│   │           │           └── com
+│   │           │               └── bancolombia
+│   │           │                   └── products
+│   │           │                       └── inmemory
+│   │           │                           └── product
+│   │           │                               ├── adapter
+│   │           │                               │   └── InMemoryProductRepositoryAdapter.java
+│   │           │                               ├── application
+│   │           │                               ├── infra
+│   │           │                               │   ├── InMemoryStore.java
+│   │           │                               │   └── ProductIdGenerator.java
+│   │           │                               └── shared
+│   │           └── test
+│   │               └── java
+│   │                   └── co
+│   │                       └── com
+│   │                           └── bancolombia
+│   │                               └── products
+│   │                                   └── inmemory
+│   ├── entry-points
+│   │   └── reactive-web
+│   │       ├── build
+│   │       │   ├── classes
+│   │       │   │   └── java
+│   │       │   │       ├── main
+│   │       │   │       │   └── co
+│   │       │   │       │       └── com
+│   │       │   │       │           └── bancolombia
+│   │       │   │       │               └── products
+│   │       │   │       │                   └── api
+│   │       │   │       │                       ├── Handler.class
+│   │       │   │       │                       ├── RouterRest.class
+│   │       │   │       │                       ├── config
+│   │       │   │       │                       │   ├── CorsConfig.class
+│   │       │   │       │                       │   ├── ReactiveWebConfig.class
+│   │       │   │       │                       │   └── SecurityHeadersConfig.class
+│   │       │   │       │                       ├── product
+│   │       │   │       │                       │   ├── addproducts
+│   │       │   │       │                       │   │   ├── application
+│   │       │   │       │                       │   │   │   ├── AddProductsHandler.class
+│   │       │   │       │                       │   │   │   └── AddProductsMapper.class
+│   │       │   │       │                       │   │   ├── domain
+│   │       │   │       │                       │   │   │   ├── AddProductsRequestDTO$ProductDTO.class
+│   │       │   │       │                       │   │   │   ├── AddProductsRequestDTO$RequestData.class
+│   │       │   │       │                       │   │   │   ├── AddProductsRequestDTO.class
+│   │       │   │       │                       │   │   │   ├── AddProductsResponseDTO$Meta.class
+│   │       │   │       │                       │   │   │   ├── AddProductsResponseDTO$ResponseData.class
+│   │       │   │       │                       │   │   │   └── AddProductsResponseDTO.class
+│   │       │   │       │                       │   │   └── infra
+│   │       │   │       │                       │   │       └── AddProductsRouter.class
+│   │       │   │       │                       │   └── getproducts
+│   │       │   │       │                       │       ├── application
+│   │       │   │       │                       │       │   ├── GetProductsHandler.class
+│   │       │   │       │                       │       │   └── GetProductsMapper.class
+│   │       │   │       │                       │       ├── domain
+│   │       │   │       │                       │       │   ├── GetProductsResponseDTO$Data.class
+│   │       │   │       │                       │       │   ├── GetProductsResponseDTO$Meta.class
+│   │       │   │       │                       │       │   ├── GetProductsResponseDTO$ProductDTO.class
+│   │       │   │       │                       │       │   └── GetProductsResponseDTO.class
+│   │       │   │       │                       │       └── infra
+│   │       │   │       │                       │           └── GetProductsRouter.class
+│   │       │   │       │                       └── shared
+│   │       │   │       │                           ├── domain
+│   │       │   │       │                           │   ├── ErrorResponseDTO$Detail.class
+│   │       │   │       │                           │   ├── ErrorResponseDTO$Error.class
+│   │       │   │       │                           │   ├── ErrorResponseDTO$Meta.class
+│   │       │   │       │                           │   └── ErrorResponseDTO.class
+│   │       │   │       │                           └── helpers
+│   │       │   │       │                               ├── DateTimeProvider.class
+│   │       │   │       │                               ├── ErrorResponseFactory.class
+│   │       │   │       │                               ├── FastRequestIdGenerator.class
+│   │       │   │       │                               ├── GlobalExceptionHandler.class
+│   │       │   │       │                               ├── HeaderContextExtractor.class
+│   │       │   │       │                               ├── JacksonErrorResponseFactory.class
+│   │       │   │       │                               └── RequestIdGenerator.class
+│   │       │   │       └── test
+│   │       │   │           └── co
+│   │       │   │               └── com
+│   │       │   │                   └── bancolombia
+│   │       │   │                       └── products
+│   │       │   │                           └── api
+│   │       │   │                               ├── RouterRestTest.class
+│   │       │   │                               ├── config
+│   │       │   │                               │   └── ConfigTest.class
+│   │       │   │                               ├── product
+│   │       │   │                               │   └── getproducts
+│   │       │   │                               │       └── application
+│   │       │   │                               │           ├── GetProductsHandlerTest$1.class
+│   │       │   │                               │           ├── GetProductsHandlerTest$2.class
+│   │       │   │                               │           └── GetProductsHandlerTest.class
+│   │       │   │                               └── shared
+│   │       │   │                                   └── helpers
+│   │       │   │                                       ├── GlobalExceptionHandlerTest$1.class
+│   │       │   │                                       ├── GlobalExceptionHandlerTest$2.class
+│   │       │   │                                       ├── GlobalExceptionHandlerTest$3.class
+│   │       │   │                                       ├── GlobalExceptionHandlerTest.class
+│   │       │   │                                       ├── HeaderContextExtractorTest$1.class
+│   │       │   │                                       └── HeaderContextExtractorTest.class
+│   │       │   ├── generated
+│   │       │   │   └── sources
+│   │       │   │       ├── annotationProcessor
+│   │       │   │       │   └── java
+│   │       │   │       │       ├── main
+│   │       │   │       │       └── test
+│   │       │   │       └── headers
+│   │       │   │           └── java
+│   │       │   │               ├── main
+│   │       │   │               └── test
+│   │       │   ├── jacoco
+│   │       │   │   └── test.exec
+│   │       │   ├── libs
+│   │       │   │   └── reactive-web.jar
+│   │       │   ├── pitClasspath
+│   │       │   ├── pitHistory.txt
+│   │       │   ├── reports
+│   │       │   │   ├── jacoco.xml
+│   │       │   │   ├── jacocoHtml
+│   │       │   │   │   ├── co.com.bancolombia.products.api
+│   │       │   │   │   │   ├── Handler.html
+│   │       │   │   │   │   ├── Handler.java.html
+│   │       │   │   │   │   ├── RouterRest.html
+│   │       │   │   │   │   ├── RouterRest.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.config
+│   │       │   │   │   │   ├── CorsConfig.html
+│   │       │   │   │   │   ├── CorsConfig.java.html
+│   │       │   │   │   │   ├── ReactiveWebConfig.html
+│   │       │   │   │   │   ├── ReactiveWebConfig.java.html
+│   │       │   │   │   │   ├── SecurityHeadersConfig.html
+│   │       │   │   │   │   ├── SecurityHeadersConfig.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.addproducts.application
+│   │       │   │   │   │   ├── AddProductsHandler.html
+│   │       │   │   │   │   ├── AddProductsHandler.java.html
+│   │       │   │   │   │   ├── AddProductsMapper.html
+│   │       │   │   │   │   ├── AddProductsMapper.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.addproducts.domain
+│   │       │   │   │   │   ├── AddProductsRequestDTO$ProductDTO.html
+│   │       │   │   │   │   ├── AddProductsRequestDTO$RequestData.html
+│   │       │   │   │   │   ├── AddProductsRequestDTO.html
+│   │       │   │   │   │   ├── AddProductsRequestDTO.java.html
+│   │       │   │   │   │   ├── AddProductsResponseDTO$Meta.html
+│   │       │   │   │   │   ├── AddProductsResponseDTO$ResponseData.html
+│   │       │   │   │   │   ├── AddProductsResponseDTO.html
+│   │       │   │   │   │   ├── AddProductsResponseDTO.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.addproducts.infra
+│   │       │   │   │   │   ├── AddProductsRouter.html
+│   │       │   │   │   │   ├── AddProductsRouter.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.getproducts.application
+│   │       │   │   │   │   ├── GetProductsHandler.html
+│   │       │   │   │   │   ├── GetProductsHandler.java.html
+│   │       │   │   │   │   ├── GetProductsMapper.html
+│   │       │   │   │   │   ├── GetProductsMapper.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.getproducts.domain
+│   │       │   │   │   │   ├── GetProductsResponseDTO$Data.html
+│   │       │   │   │   │   ├── GetProductsResponseDTO$Meta.html
+│   │       │   │   │   │   ├── GetProductsResponseDTO$ProductDTO.html
+│   │       │   │   │   │   ├── GetProductsResponseDTO.html
+│   │       │   │   │   │   ├── GetProductsResponseDTO.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.getproducts.infra
+│   │       │   │   │   │   ├── GetProductsRouter.html
+│   │       │   │   │   │   ├── GetProductsRouter.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.shared.domain
+│   │       │   │   │   │   ├── ErrorResponseDTO$Detail.html
+│   │       │   │   │   │   ├── ErrorResponseDTO$Error.html
+│   │       │   │   │   │   ├── ErrorResponseDTO$Meta.html
+│   │       │   │   │   │   ├── ErrorResponseDTO.html
+│   │       │   │   │   │   ├── ErrorResponseDTO.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.shared.helpers
+│   │       │   │   │   │   ├── DateTimeProvider.html
+│   │       │   │   │   │   ├── DateTimeProvider.java.html
+│   │       │   │   │   │   ├── ErrorResponseFactory.html
+│   │       │   │   │   │   ├── ErrorResponseFactory.java.html
+│   │       │   │   │   │   ├── FastRequestIdGenerator.html
+│   │       │   │   │   │   ├── FastRequestIdGenerator.java.html
+│   │       │   │   │   │   ├── GlobalExceptionHandler.html
+│   │       │   │   │   │   ├── GlobalExceptionHandler.java.html
+│   │       │   │   │   │   ├── HeaderContextExtractor.html
+│   │       │   │   │   │   ├── HeaderContextExtractor.java.html
+│   │       │   │   │   │   ├── JacksonErrorResponseFactory.html
+│   │       │   │   │   │   ├── JacksonErrorResponseFactory.java.html
+│   │       │   │   │   │   ├── RequestIdGenerator.html
+│   │       │   │   │   │   ├── RequestIdGenerator.java.html
+│   │       │   │   │   │   ├── index.html
+│   │       │   │   │   │   └── index.source.html
+│   │       │   │   │   ├── index.html
+│   │       │   │   │   ├── jacoco-resources
+│   │       │   │   │   │   ├── branchfc.gif
+│   │       │   │   │   │   ├── branchnc.gif
+│   │       │   │   │   │   ├── branchpc.gif
+│   │       │   │   │   │   ├── bundle.gif
+│   │       │   │   │   │   ├── class.gif
+│   │       │   │   │   │   ├── down.gif
+│   │       │   │   │   │   ├── greenbar.gif
+│   │       │   │   │   │   ├── group.gif
+│   │       │   │   │   │   ├── method.gif
+│   │       │   │   │   │   ├── package.gif
+│   │       │   │   │   │   ├── prettify.css
+│   │       │   │   │   │   ├── prettify.js
+│   │       │   │   │   │   ├── redbar.gif
+│   │       │   │   │   │   ├── report.css
+│   │       │   │   │   │   ├── report.gif
+│   │       │   │   │   │   ├── session.gif
+│   │       │   │   │   │   ├── sort.gif
+│   │       │   │   │   │   ├── sort.js
+│   │       │   │   │   │   ├── source.gif
+│   │       │   │   │   │   └── up.gif
+│   │       │   │   │   └── jacoco-sessions.html
+│   │       │   │   ├── pitest
+│   │       │   │   │   ├── co.com.bancolombia.products.api
+│   │       │   │   │   │   ├── Handler.java.html
+│   │       │   │   │   │   ├── RouterRest.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.config
+│   │       │   │   │   │   ├── CorsConfig.java.html
+│   │       │   │   │   │   ├── ReactiveWebConfig.java.html
+│   │       │   │   │   │   ├── SecurityHeadersConfig.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.addproducts.application
+│   │       │   │   │   │   ├── AddProductsHandler.java.html
+│   │       │   │   │   │   ├── AddProductsMapper.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.addproducts.infra
+│   │       │   │   │   │   ├── AddProductsRouter.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.getproducts.application
+│   │       │   │   │   │   ├── GetProductsHandler.java.html
+│   │       │   │   │   │   ├── GetProductsMapper.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.product.getproducts.infra
+│   │       │   │   │   │   ├── GetProductsRouter.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── co.com.bancolombia.products.api.shared.helpers
+│   │       │   │   │   │   ├── DateTimeProvider.java.html
+│   │       │   │   │   │   ├── ErrorResponseFactory.java.html
+│   │       │   │   │   │   ├── FastRequestIdGenerator.java.html
+│   │       │   │   │   │   ├── GlobalExceptionHandler.java.html
+│   │       │   │   │   │   ├── HeaderContextExtractor.java.html
+│   │       │   │   │   │   ├── JacksonErrorResponseFactory.java.html
+│   │       │   │   │   │   ├── RequestIdGenerator.java.html
+│   │       │   │   │   │   └── index.html
+│   │       │   │   │   ├── index.html
+│   │       │   │   │   ├── linecoverage.xml
+│   │       │   │   │   ├── mutations.xml
+│   │       │   │   │   └── style.css
+│   │       │   │   └── tests
+│   │       │   │       └── test
+│   │       │   │           ├── classes
+│   │       │   │           │   ├── co.com.bancolombia.products.api.RouterRestTest.html
+│   │       │   │           │   ├── co.com.bancolombia.products.api.config.ConfigTest.html
+│   │       │   │           │   ├── co.com.bancolombia.products.api.product.getproducts.application.GetProductsHandlerTest.html
+│   │       │   │           │   ├── co.com.bancolombia.products.api.shared.helpers.GlobalExceptionHandlerTest.html
+│   │       │   │           │   └── co.com.bancolombia.products.api.shared.helpers.HeaderContextExtractorTest.html
+│   │       │   │           ├── css
+│   │       │   │           │   ├── base-style.css
+│   │       │   │           │   └── style.css
+│   │       │   │           ├── index.html
+│   │       │   │           ├── js
+│   │       │   │           │   └── report.js
+│   │       │   │           └── packages
+│   │       │   │               ├── co.com.bancolombia.products.api.config.html
+│   │       │   │               ├── co.com.bancolombia.products.api.html
+│   │       │   │               ├── co.com.bancolombia.products.api.product.getproducts.application.html
+│   │       │   │               └── co.com.bancolombia.products.api.shared.helpers.html
+│   │       │   ├── sonar-resolver
+│   │       │   ├── test-results
+│   │       │   │   └── test
+│   │       │   │       ├── TEST-co.com.bancolombia.products.api.RouterRestTest.xml
+│   │       │   │       ├── TEST-co.com.bancolombia.products.api.config.ConfigTest.xml
+│   │       │   │       ├── TEST-co.com.bancolombia.products.api.product.getproducts.application.GetProductsHandlerTest.xml
+│   │       │   │       ├── TEST-co.com.bancolombia.products.api.shared.helpers.GlobalExceptionHandlerTest.xml
+│   │       │   │       ├── TEST-co.com.bancolombia.products.api.shared.helpers.HeaderContextExtractorTest.xml
+│   │       │   │       └── binary
+│   │       │   │           ├── output.bin
+│   │       │   │           ├── output.bin.idx
+│   │       │   │           └── results.bin
+│   │       │   └── tmp
+│   │       │       ├── compileJava
+│   │       │       │   └── previous-compilation-data.bin
+│   │       │       ├── compileTestJava
+│   │       │       │   └── previous-compilation-data.bin
+│   │       │       ├── jar
+│   │       │       │   └── MANIFEST.MF
+│   │       │       └── test
+│   │       ├── build.gradle
+│   │       └── src
+│   │           ├── main
+│   │           │   └── java
+│   │           │       └── co
+│   │           │           └── com
+│   │           │               └── bancolombia
+│   │           │                   └── products
+│   │           │                       └── api
+│   │           │                           ├── Handler.java
+│   │           │                           ├── RouterRest.java
+│   │           │                           ├── config
+│   │           │                           │   ├── CorsConfig.java
+│   │           │                           │   ├── ReactiveWebConfig.java
+│   │           │                           │   └── SecurityHeadersConfig.java
+│   │           │                           ├── product
+│   │           │                           │   ├── addproducts
+│   │           │                           │   │   ├── application
+│   │           │                           │   │   │   ├── AddProductsHandler.java
+│   │           │                           │   │   │   └── AddProductsMapper.java
+│   │           │                           │   │   ├── domain
+│   │           │                           │   │   │   ├── AddProductsRequestDTO.java
+│   │           │                           │   │   │   └── AddProductsResponseDTO.java
+│   │           │                           │   │   └── infra
+│   │           │                           │   │       └── AddProductsRouter.java
+│   │           │                           │   └── getproducts
+│   │           │                           │       ├── application
+│   │           │                           │       │   ├── GetProductsHandler.java
+│   │           │                           │       │   └── GetProductsMapper.java
+│   │           │                           │       ├── domain
+│   │           │                           │       │   └── GetProductsResponseDTO.java
+│   │           │                           │       └── infra
+│   │           │                           │           └── GetProductsRouter.java
+│   │           │                           └── shared
+│   │           │                               ├── domain
+│   │           │                               │   └── ErrorResponseDTO.java
+│   │           │                               └── helpers
+│   │           │                                   ├── DateTimeProvider.java
+│   │           │                                   ├── ErrorResponseFactory.java
+│   │           │                                   ├── FastRequestIdGenerator.java
+│   │           │                                   ├── GlobalExceptionHandler.java
+│   │           │                                   ├── HeaderContextExtractor.java
+│   │           │                                   ├── JacksonErrorResponseFactory.java
+│   │           │                                   └── RequestIdGenerator.java
+│   │           └── test
+│   │               └── java
+│   │                   └── co
+│   │                       └── com
+│   │                           └── bancolombia
+│   │                               └── products
+│   │                                   └── api
+│   │                                       ├── RouterRestTest.java
+│   │                                       ├── config
+│   │                                       │   └── ConfigTest.java
+│   │                                       ├── product
+│   │                                       │   ├── addproducts
+│   │                                       │   │   ├── application
+│   │                                       │   │   ├── domain
+│   │                                       │   │   └── infra
+│   │                                       │   └── getproducts
+│   │                                       │       ├── application
+│   │                                       │       │   └── GetProductsHandlerTest.java
+│   │                                       │       ├── domain
+│   │                                       │       └── infra
+│   │                                       └── shared
+│   │                                           └── helpers
+│   │                                               ├── GlobalExceptionHandlerTest.java
+│   │                                               └── HeaderContextExtractorTest.java
+│   └── helpers
+├── lombok.config
+├── main.gradle
+└── settings.gradle
+
+419 directories, 880 files

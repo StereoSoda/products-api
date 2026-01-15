@@ -1,13 +1,13 @@
 package co.com.bancolombia.products.usecase.product.addproducts;
 
 import co.com.bancolombia.products.model.product.addproducts.gateway.ProductRepositoryGateway;
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.cqrs.Command;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;
 import co.com.bancolombia.products.model.shared.exception.ErrorCode;
 import co.com.bancolombia.products.model.shared.policy.ProductKeyPolicy;
-import co.com.bancolombia.products.usecase.product.addproducts.validation.ProductValidator;
+import co.com.bancolombia.products.model.product.addproducts.validation.ProductValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -44,20 +44,20 @@ class AddProductsUseCaseTest {
         ctx = new ContextData(UUID.randomUUID().toString(), UUID.randomUUID().toString());
     }
 
-    private Product p(String name, String type, String quantity, String price, String currency) {
-        return new Product(null, name, type, quantity, price, currency);
+    private ProductMainDTO p(String name, String type, String quantity, String price, String currency) {
+        return new ProductMainDTO(null, name, type, quantity, price, currency);
     }
 
-    private Command<AddProductsPayload, ContextData> cmd(List<Product> products) {
+    private Command<AddProductsPayload, ContextData> cmd(List<ProductMainDTO> products) {
         return new Command<>(new AddProductsPayload(products), ctx);
     }
 
     @Test
     void testCase201_success_savesAll_whenNoDuplicatesAndNotExists() {
         // Arrange
-        Product p1 = p("Laptop", "Tecnología", "1", "100", "COP");
-        Product p2 = p("Camisa", "Moda", "2", "200", "COP");
-        List<Product> products = List.of(p1, p2);
+        ProductMainDTO p1 = p("Laptop", "Tecnología", "1", "100", "COP");
+        ProductMainDTO p2 = p("Camisa", "Moda", "2", "200", "COP");
+        List<ProductMainDTO> products = List.of(p1, p2);
 
         when(keyPolicy.buildKey(p1)).thenReturn("k1");
         when(keyPolicy.buildKey(p2)).thenReturn("k2");
@@ -123,8 +123,8 @@ class AddProductsUseCaseTest {
 
     @Test
     void testCase400_validatorThrows() {
-        Product p1 = p("Laptop", "Tecnología", "1", "100", "COP");
-        List<Product> products = List.of(p1);
+        ProductMainDTO p1 = p("Laptop", "Tecnología", "1", "100", "COP");
+        List<ProductMainDTO> products = List.of(p1);
 
         doThrow(BusinessException.withContext(ErrorCode.ER400, ctx))
                 .when(validator).validate(p1, ctx);
@@ -143,11 +143,11 @@ class AddProductsUseCaseTest {
 
     @Test
     void testCase400_duplicateInRequest_returns400() {
-        Product p1 = p("Laptop", "Tecnología", "1", "100", "COP");
-        Product p2 = p("Laptop", "Tecnología", "1", "100", "COP");
-        List<Product> products = List.of(p1, p2);
+        ProductMainDTO p1 = p("Laptop", "Tecnología", "1", "100", "COP");
+        ProductMainDTO p2 = p("Laptop", "Tecnología", "1", "100", "COP");
+        List<ProductMainDTO> products = List.of(p1, p2);
 
-        when(keyPolicy.buildKey(any(Product.class))).thenReturn("k1");
+        when(keyPolicy.buildKey(any(ProductMainDTO.class))).thenReturn("k1");
 
         StepVerifier.create(useCase.execute(cmd(products)))
                 .expectErrorSatisfies(ex -> {
@@ -157,9 +157,9 @@ class AddProductsUseCaseTest {
                 })
                 .verify();
 
-        verify(validator, times(2)).validate(any(Product.class), eq(ctx));
+        verify(validator, times(2)).validate(any(ProductMainDTO.class), eq(ctx));
 
-        verify(keyPolicy, times(2)).buildKey(any(Product.class));
+        verify(keyPolicy, times(2)).buildKey(any(ProductMainDTO.class));
 
         verify(repository, never()).existsByKey(anyString());
         verify(repository, never()).saveAll(anyList());
@@ -167,8 +167,8 @@ class AddProductsUseCaseTest {
 
     @Test
     void testCase409_productAlreadyExists_returns409() {
-        Product p1 = p("Laptop", "Tecnología", "1", "100", "COP");
-        List<Product> products = List.of(p1);
+        ProductMainDTO p1 = p("Laptop", "Tecnología", "1", "100", "COP");
+        List<ProductMainDTO> products = List.of(p1);
 
         when(keyPolicy.buildKey(p1)).thenReturn("k1");
 
@@ -189,8 +189,8 @@ class AddProductsUseCaseTest {
 
     @Test
     void testCase500_repositoryExistsByKeyErrors_propagates500() {
-        Product p1 = p("Laptop", "Tecnología", "1", "100", "COP");
-        List<Product> products = List.of(p1);
+        ProductMainDTO p1 = p("Laptop", "Tecnología", "1", "100", "COP");
+        List<ProductMainDTO> products = List.of(p1);
 
         when(keyPolicy.buildKey(p1)).thenReturn("k1");
 
@@ -206,8 +206,8 @@ class AddProductsUseCaseTest {
 
     @Test
     void testCase500_saveAllErrors_propagates500() {
-        Product p1 = p("Laptop", "Tecnología", "1", "100", "COP");
-        List<Product> products = List.of(p1);
+        ProductMainDTO p1 = p("Laptop", "Tecnología", "1", "100", "COP");
+        List<ProductMainDTO> products = List.of(p1);
 
         when(keyPolicy.buildKey(p1)).thenReturn("k1");
         when(repository.existsByKey("k1")).thenReturn(Mono.just(false));

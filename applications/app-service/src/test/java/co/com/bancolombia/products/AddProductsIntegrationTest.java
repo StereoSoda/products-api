@@ -28,9 +28,9 @@ class AddProductsIntegrationTest {
     @BeforeEach
     void setUp() {
         this.client = WebTestClient
-                .bindToApplicationContext(context)
-                .configureClient()
-                .build();
+            .bindToApplicationContext(context)
+            .configureClient()
+            .build();
     }
 
     @Test
@@ -125,53 +125,28 @@ class AddProductsIntegrationTest {
 
         // 1) Inserta OK
         client.post()
-                .uri("/addProducts")
-                .header(MESSAGE_ID, messageId)
-                .header(X_REQUEST_ID, xRequestId)
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(body)
-                .exchange()
-                .expectStatus().isCreated();
+            .uri("/addProducts")
+            .header(MESSAGE_ID, messageId)
+            .header(X_REQUEST_ID, xRequestId)
+            .contentType(MediaType.APPLICATION_JSON)
+            .bodyValue(body)
+            .exchange()
+            .expectStatus().isCreated();
 
         // 2) Reintenta => 409
         client.post()
-                .uri("/addProducts")
-                .header(MESSAGE_ID, messageId)
-                .header(X_REQUEST_ID, xRequestId)
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue(body)
-                .exchange()
-                .expectStatus().isEqualTo(409)
-                .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
-                .expectBody()
-                .jsonPath("$.error.code").isEqualTo("ER409")
-                .jsonPath("$.meta.message-id").isEqualTo(messageId);
+            .uri("/addProducts")
+            .header(MESSAGE_ID, messageId)
+            .header(X_REQUEST_ID, xRequestId)
+            .contentType(MediaType.APPLICATION_JSON)
+            .bodyValue(body)
+            .exchange()
+            .expectStatus().isEqualTo(409)
+            .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
+            .expectBody()
+            .jsonPath("$.error.code").isEqualTo("ER409")
+            .jsonPath("$.meta.message-id").isEqualTo(messageId);
     }
-
-//    @Test
-//    void testCase500_unknownError_returns500() {
-//        String body = """
-//            {
-//              "data": {
-//                "products": [
-//                  { "name":"", "type":"Tecnología", "quantity":1, "price":100, "currency":"COP" }
-//                ]
-//              }
-//            }
-//        """;
-//
-//        client.post()
-//                .uri("/addProducts" + "?forceError=true")
-//                .header("message-id", uuid())
-//                .header("x-request-id", uuid())
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .bodyValue(body)
-//                .exchange()
-//                .expectStatus().is5xxServerError()
-//                .expectHeader().exists("x-request-id")
-//                .expectBody()
-//                .jsonPath("$.error.code").isEqualTo("ER500");
-//    }
 
     private static String uuid() {
         return UUID.randomUUID().toString();

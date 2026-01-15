@@ -1,10 +1,10 @@
 package co.com.bancolombia.products.usecase.product.getproducts;
 
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.product.getproducts.gateway.ProductQueryGateway;
 import co.com.bancolombia.products.model.shared.cqrs.Command;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
-import co.com.bancolombia.products.usecase.product.getproducts.validation.GetProductsQueryValidator;
+import co.com.bancolombia.products.model.product.getproducts.validation.GetProductsQueryValidator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -32,12 +32,12 @@ class GetProductsUseCaseTest {
             "22222222-2222-2222-2222-222222222222"
     );
 
-    private Product p1() {
-        return new Product(null, "Laptop", "Tecnología", "1", "100", "COP");
+    private ProductMainDTO p1() {
+        return new ProductMainDTO(null, "Laptop", "Tecnología", "1", "100", "COP");
     }
 
-    private Product p2() {
-        return new Product(null, "Camisa", "Moda", "2", "50", "COP");
+    private ProductMainDTO p2() {
+        return new ProductMainDTO(null, "Camisa", "Moda", "2", "50", "COP");
     }
 
     @Test

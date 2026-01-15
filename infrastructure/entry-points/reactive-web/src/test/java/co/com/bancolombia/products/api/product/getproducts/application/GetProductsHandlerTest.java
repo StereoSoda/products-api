@@ -1,7 +1,7 @@
 package co.com.bancolombia.products.api.product.getproducts.application;
 
 import co.com.bancolombia.products.api.shared.helpers.*;
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.exception.ErrorCode;
 import co.com.bancolombia.products.usecase.product.getproducts.GetProductsUseCase;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,9 +34,9 @@ class GetProductsHandlerTest {
         // mocks
         GetProductsUseCase useCase = mock(GetProductsUseCase.class);
 
-        List<Product> products = List.of(
-                new Product(null, "Laptop", "Tecnología", "1", "100", "COP"),
-                new Product(null, "Camisa", "Moda", "2", "50", "COP")
+        List<ProductMainDTO> products = List.of(
+                new ProductMainDTO(null, "Laptop", "Tecnología", "1", "100", "COP"),
+                new ProductMainDTO(null, "Camisa", "Moda", "2", "50", "COP")
         );
 
         when(useCase.execute(any())).thenReturn(Mono.just(products));

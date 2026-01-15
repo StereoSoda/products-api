@@ -1,13 +1,13 @@
 package co.com.bancolombia.products.usecase.product.addproducts;
 
 import co.com.bancolombia.products.model.product.addproducts.gateway.ProductRepositoryGateway;
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.cqrs.Command;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;
 import co.com.bancolombia.products.model.shared.exception.ErrorCode;
 import co.com.bancolombia.products.model.shared.policy.ProductKeyPolicy;
-import co.com.bancolombia.products.usecase.product.addproducts.validation.ProductValidator;
+import co.com.bancolombia.products.model.product.addproducts.validation.ProductValidator;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -36,14 +36,14 @@ public class AddProductsUseCase {
                 return Mono.error(BusinessException.withContext(ErrorCode.ER400, ctx));
             }
 
-            List<Product> products = payload.products();
+            List<ProductMainDTO> products = payload.products();
 
             // Validar cada producto
-            for (Product p : products) validator.validate(p, ctx);
+            for (ProductMainDTO p : products) validator.validate(p, ctx);
 
             // Duplicados dentro del request 400
             Set<String> keys = new HashSet<>();
-            for (Product p : products) {
+            for (ProductMainDTO p : products) {
                 String key = keyPolicy.buildKey(p);
                 if (!keys.add(key)) {
                     return Mono.error(BusinessException.withContext(ErrorCode.ER400, ctx));
