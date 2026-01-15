@@ -1,6 +1,6 @@
 package co.com.bancolombia.products.usecase.product.addproducts.validation;
 
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;
 import co.com.bancolombia.products.model.shared.exception.ErrorCode;
@@ -32,7 +32,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase400_typeNotAllowed() {
-        Product p = new Product(null,"Laptop", "Hogar", "1", "100", "COP");
+        ProductMainDTO p = new ProductMainDTO(null,"Laptop", "Hogar", "1", "100", "COP");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertFalse(ex.details().isEmpty());
@@ -41,7 +41,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase400_nameHasSpecialChars() {
-        Product p = new Product(null, "Lap@top", "Tecnología", "1", "100", "COP");
+        ProductMainDTO p = new ProductMainDTO(null, "Lap@top", "Tecnología", "1", "100", "COP");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertEquals("name", ex.details().get(0).field());
@@ -50,7 +50,7 @@ class ProductValidatorTest {
     @Test
     void testCase400_nameTooLong() {
         String longName = "a".repeat(51);
-        Product p = new Product(null, longName, "Moda", "1", "100", "COP");
+        ProductMainDTO p = new ProductMainDTO(null, longName, "Moda", "1", "100", "COP");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertEquals("name", ex.details().get(0).field());
@@ -58,7 +58,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase400_quantityGreaterThan1000() {
-        Product p = new Product(null, "Arroz", "Alimento", "1001", "100", "COP");
+        ProductMainDTO p = new ProductMainDTO(null, "Arroz", "Alimento", "1001", "100", "COP");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertEquals("quantity", ex.details().get(0).field());
@@ -66,7 +66,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase400_priceNotNumeric() {
-        Product p = new Product(null, "Camiseta", "Moda", "1", "10a", "COP");
+        ProductMainDTO p = new ProductMainDTO(null, "Camiseta", "Moda", "1", "10a", "COP");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertEquals("price", ex.details().get(0).field());
@@ -74,7 +74,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase400_priceLessOrEqualZero() {
-        Product p = new Product(null, "Camiseta", "Moda", "1", "0", "COP");
+        ProductMainDTO p = new ProductMainDTO(null, "Camiseta", "Moda", "1", "0", "COP");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertEquals("price", ex.details().get(0).field());
@@ -82,7 +82,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase400_currencyNotCOP() {
-        Product p = new Product(null, "Camiseta", "Moda", "1", "100", "USD");
+        ProductMainDTO p = new ProductMainDTO(null, "Camiseta", "Moda", "1", "100", "USD");
         BusinessException ex = assertThrows(BusinessException.class, () -> validator.validate(p, ctx()));
         assertEquals(ErrorCode.ER400, ex.errorCode());
         assertEquals("currency", ex.details().get(0).field());
@@ -90,7 +90,7 @@ class ProductValidatorTest {
 
     @Test
     void testCase201_validProductPassesValidation() {
-        Product p = new Product(null, "Camiseta", "Moda", "10", "100", "COP");
+        ProductMainDTO p = new ProductMainDTO(null, "Camiseta", "Moda", "10", "100", "COP");
         assertDoesNotThrow(() -> validator.validate(p, ctx()));
     }
 }

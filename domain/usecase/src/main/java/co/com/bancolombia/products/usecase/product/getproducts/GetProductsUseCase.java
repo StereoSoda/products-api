@@ -1,6 +1,6 @@
 package co.com.bancolombia.products.usecase.product.getproducts;
 
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.product.getproducts.gateway.ProductQueryGateway;
 import co.com.bancolombia.products.model.shared.cqrs.Command;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
@@ -21,7 +21,7 @@ public class GetProductsUseCase {
         this.validator = validator;
     }
 
-    public Mono<List<Product>> execute(Command<GetProductsQuery, ContextData> command) {
+    public Mono<List<ProductMainDTO>> execute(Command<GetProductsQuery, ContextData> command) {
         return Mono.defer(() -> {
             ContextData ctx = command.context();
             GetProductsQuery query = command.payload();

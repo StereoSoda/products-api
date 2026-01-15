@@ -1,12 +1,12 @@
 package co.com.bancolombia.products.model.shared.policy;
 
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 
 import java.text.Normalizer;
 
 public class ProductKeyPolicy {
 
-    public String buildKey(Product p) {
+    public String buildKey(ProductMainDTO p) {
         // Key estable para existencia/duplicados
         String name = normalize(p.name());
         String type = normalize(p.type());

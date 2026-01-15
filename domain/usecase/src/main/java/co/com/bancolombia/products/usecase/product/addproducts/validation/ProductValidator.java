@@ -1,6 +1,6 @@
 package co.com.bancolombia.products.usecase.product.addproducts.validation;
 
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;
 import co.com.bancolombia.products.model.shared.exception.ErrorCode;
@@ -24,7 +24,7 @@ public class ProductValidator {
         this.keyPolicy = keyPolicy;
     }
 
-    public void validate(Product p, ContextData ctx) {
+    public void validate(ProductMainDTO p, ContextData ctx) {
         if (p == null) {
             throw invalid(ctx, List.of(new ValidationError("product", "Producto es requerido")));
         }

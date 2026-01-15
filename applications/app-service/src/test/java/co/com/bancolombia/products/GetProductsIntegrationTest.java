@@ -28,9 +28,9 @@ class GetProductsIntegrationTest {
     @BeforeEach
     void setUp() {
         this.client = WebTestClient
-                .bindToApplicationContext(context)
-                .configureClient()
-                .build();
+            .bindToApplicationContext(context)
+            .configureClient()
+            .build();
     }
 
     @Test
@@ -43,17 +43,17 @@ class GetProductsIntegrationTest {
 
         // Act + Assert
         client.get()
-                .uri("/getProducts")
-                .header(MESSAGE_ID, messageId)
-                .header(X_REQUEST_ID, xRequestId)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
-                .expectBody()
-                .jsonPath("$.meta.messageId").isEqualTo(messageId)
-                .jsonPath("$.data.products").isArray()
-                .jsonPath("$.data.products.length()").isEqualTo(2);
+            .uri("/getProducts")
+            .header(MESSAGE_ID, messageId)
+            .header(X_REQUEST_ID, xRequestId)
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isOk()
+            .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
+            .expectBody()
+            .jsonPath("$.meta.messageId").isEqualTo(messageId)
+            .jsonPath("$.data.products").isArray()
+            .jsonPath("$.data.products.length()").isEqualTo(2);
     }
 
     @Test
@@ -64,22 +64,22 @@ class GetProductsIntegrationTest {
         String xRequestId = uuid();
 
         client.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/getProducts")
-                        .queryParam("any_filter", "tipo")
-                        .queryParam("any_value", "Tecnología")
-                        .build())
-                .header(MESSAGE_ID, messageId)
-                .header(X_REQUEST_ID, xRequestId)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
-                .expectBody()
-                .jsonPath("$.meta.messageId").isEqualTo(messageId)
-                .jsonPath("$.data.products").isArray()
-                .jsonPath("$.data.products.length()").isEqualTo(1)
-                .jsonPath("$.data.products[0].name").isEqualTo("Laptop");
+            .uri(uriBuilder -> uriBuilder
+                .path("/getProducts")
+                .queryParam("any_filter", "tipo")
+                .queryParam("any_value", "Tecnología")
+                .build())
+            .header(MESSAGE_ID, messageId)
+            .header(X_REQUEST_ID, xRequestId)
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isOk()
+            .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
+            .expectBody()
+            .jsonPath("$.meta.messageId").isEqualTo(messageId)
+            .jsonPath("$.data.products").isArray()
+            .jsonPath("$.data.products.length()").isEqualTo(1)
+            .jsonPath("$.data.products[0].name").isEqualTo("Laptop");
     }
 
     @Test
@@ -87,13 +87,13 @@ class GetProductsIntegrationTest {
         seedProducts();
 
         client.get()
-                .uri("/getProducts")
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isBadRequest()
-                .expectHeader().exists(X_REQUEST_ID)
-                .expectBody()
-                .jsonPath("$.error.code").isEqualTo("ER400");
+            .uri("/getProducts")
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isBadRequest()
+            .expectHeader().exists(X_REQUEST_ID)
+            .expectBody()
+            .jsonPath("$.error.code").isEqualTo("ER400");
     }
 
     @Test
@@ -105,20 +105,20 @@ class GetProductsIntegrationTest {
 
         // any_filter inválido según tu validator (solo tipo/nombre/precio)
         client.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/getProducts")
-                        .queryParam("any_filter", "invalid_filter")
-                        .queryParam("any_value", "whatever")
-                        .build())
-                .header(MESSAGE_ID, messageId)
-                .header(X_REQUEST_ID, xRequestId)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isBadRequest()
-                .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
-                .expectBody()
-                .jsonPath("$.error.code").isEqualTo("ER400")
-                .jsonPath("$.meta.message-id").isEqualTo(messageId);
+            .uri(uriBuilder -> uriBuilder
+                .path("/getProducts")
+                .queryParam("any_filter", "invalid_filter")
+                .queryParam("any_value", "whatever")
+                .build())
+            .header(MESSAGE_ID, messageId)
+            .header(X_REQUEST_ID, xRequestId)
+            .accept(MediaType.APPLICATION_JSON)
+            .exchange()
+            .expectStatus().isBadRequest()
+            .expectHeader().valueEquals(X_REQUEST_ID, xRequestId)
+            .expectBody()
+            .jsonPath("$.error.code").isEqualTo("ER400")
+            .jsonPath("$.meta.message-id").isEqualTo(messageId);
     }
 
     @Test
@@ -140,27 +140,6 @@ class GetProductsIntegrationTest {
             .jsonPath("$.error.code").isEqualTo("ER409")
             .jsonPath("$.meta.message-id").isEqualTo(messageId);
     }
-
-    // Si más adelante habilitas un switch real para forzar 500, puedes activar este test
-//    @Test
-//    void testCase500_unknownError_returns500() {
-//        seedProducts();
-//
-//        String messageId = uuid();
-//        String xRequestId = uuid();
-//
-//        client.get()
-//                .uri("/getProducts?forceError=true")
-//                .header(MESSAGE_ID, messageId)
-//                .header(X_REQUEST_ID, xRequestId)
-//                .accept(MediaType.APPLICATION_JSON)
-//                .exchange()
-//                .expectStatus().is5xxServerError()
-//                .expectHeader().exists(X_REQUEST_ID)
-//                .expectBody()
-//                .jsonPath("$.error.code").isEqualTo("ER500")
-//                .jsonPath("$.meta.message-id").isEqualTo(messageId);
-//    }
 
     private void seedProducts() {
         String messageId = uuid();

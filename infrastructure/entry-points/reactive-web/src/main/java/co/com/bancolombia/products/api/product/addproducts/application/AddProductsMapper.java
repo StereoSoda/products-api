@@ -2,7 +2,7 @@ package co.com.bancolombia.products.api.product.addproducts.application;
 
 import co.com.bancolombia.products.api.product.addproducts.domain.AddProductsRequestDTO;
 import co.com.bancolombia.products.api.product.addproducts.domain.AddProductsResponseDTO;
-import co.com.bancolombia.products.model.product.model.Product;
+import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.cqrs.Command;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;
@@ -18,8 +18,8 @@ public class AddProductsMapper {
             throw BusinessException.withContext(ErrorCode.ER400, ctx);
         }
 
-        List<Product> products = dto.data().products().stream()
-                .map(p -> new Product(
+        List<ProductMainDTO> products = dto.data().products().stream()
+                .map(p -> new ProductMainDTO(
                         null,
                         p.name(),
                         p.type(),
