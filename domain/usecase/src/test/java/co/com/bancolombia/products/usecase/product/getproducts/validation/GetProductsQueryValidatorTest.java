@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GetProductsQueryValidatorTest {
 
     private final ProductKeyPolicy keyPolicy = new ProductKeyPolicy();
-    private final GetProductsQueryValidator validator = new GetProductsQueryValidator(keyPolicy);
+    private final co.com.bancolombia.products.model.product.getproducts.validation.GetProductsQueryValidator validator = new co.com.bancolombia.products.model.product.getproducts.validation.GetProductsQueryValidator(keyPolicy);
 
     private final ContextData ctx = new ContextData(
             "11111111-1111-1111-1111-111111111111",

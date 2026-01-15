@@ -1,4 +1,4 @@
-package co.com.bancolombia.products.usecase.product.getproducts.validation;
+package co.com.bancolombia.products.model.product.getproducts.validation;
 
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;

@@ -4,9 +4,9 @@ import co.com.bancolombia.products.model.product.addproducts.gateway.ProductRepo
 import co.com.bancolombia.products.model.product.getproducts.gateway.ProductQueryGateway;
 import co.com.bancolombia.products.model.shared.policy.ProductKeyPolicy;
 import co.com.bancolombia.products.usecase.product.addproducts.AddProductsUseCase;
-import co.com.bancolombia.products.usecase.product.addproducts.validation.ProductValidator;
+import co.com.bancolombia.products.model.product.addproducts.validation.ProductValidator;
 import co.com.bancolombia.products.usecase.product.getproducts.GetProductsUseCase;
-import co.com.bancolombia.products.usecase.product.getproducts.validation.GetProductsQueryValidator;
+import co.com.bancolombia.products.model.product.getproducts.validation.GetProductsQueryValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

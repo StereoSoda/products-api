@@ -1,4 +1,4 @@
-package co.com.bancolombia.products.usecase.product.addproducts.validation;
+package co.com.bancolombia.products.model.product.addproducts.validation;
 
 import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;

@@ -24,7 +24,7 @@ class ProductValidatorTest {
 
     };
 
-    private final ProductValidator validator = new ProductValidator(keyPolicy);
+    private final co.com.bancolombia.products.model.product.addproducts.validation.ProductValidator validator = new co.com.bancolombia.products.model.product.addproducts.validation.ProductValidator(keyPolicy);
 
     private ContextData ctx() {
         return new ContextData(UUID.randomUUID().toString(), UUID.randomUUID().toString());

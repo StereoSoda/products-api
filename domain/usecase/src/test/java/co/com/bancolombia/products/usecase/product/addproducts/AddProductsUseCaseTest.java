@@ -7,7 +7,7 @@ import co.com.bancolombia.products.model.shared.cqrs.ContextData;
 import co.com.bancolombia.products.model.shared.exception.BusinessException;
 import co.com.bancolombia.products.model.shared.exception.ErrorCode;
 import co.com.bancolombia.products.model.shared.policy.ProductKeyPolicy;
-import co.com.bancolombia.products.usecase.product.addproducts.validation.ProductValidator;
+import co.com.bancolombia.products.model.product.addproducts.validation.ProductValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

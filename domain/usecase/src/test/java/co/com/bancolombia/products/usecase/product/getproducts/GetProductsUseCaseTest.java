@@ -4,7 +4,7 @@ import co.com.bancolombia.products.model.shared.model.ProductMainDTO;
 import co.com.bancolombia.products.model.product.getproducts.gateway.ProductQueryGateway;
 import co.com.bancolombia.products.model.shared.cqrs.Command;
 import co.com.bancolombia.products.model.shared.cqrs.ContextData;
-import co.com.bancolombia.products.usecase.product.getproducts.validation.GetProductsQueryValidator;
+import co.com.bancolombia.products.model.product.getproducts.validation.GetProductsQueryValidator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
